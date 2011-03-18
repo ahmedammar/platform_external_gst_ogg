@@ -2,7 +2,7 @@
 
 
 #AUTOMAKE_OPTIONS = foreign 1.6 dist-zip
-AUTOMAKE_OPTIONS = foreign 1.11 dist-zip dist-xz
+AUTOMAKE_OPTIONS = foreign 1.10 dist-zip
 
 SUBDIRS = src include doc
 
