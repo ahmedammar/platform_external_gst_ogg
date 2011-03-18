@@ -36,6 +36,8 @@ Android.mk: Makefile.am
 	 -:CFLAGS $(DEFS) $(INCLUDES) $(libogg_la_CFLAGS) \
 	 -:LDFLAGS $(libogg_la_LDFLAGS) \
 	 -:HEADERS $(top_srcdir)/include/ogg/ogg.h \
+	 	$(top_srcdir)/include/ogg/os_types.h \
+	 	$(top_srcdir)/include/ogg/config_types.h \
 	 -:HEADER_TARGET ogg \
 	 -:PASSTHROUGH LOCAL_ARM_MODE:=arm \
 	> $@
