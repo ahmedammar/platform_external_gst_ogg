@@ -26,3 +26,16 @@ debug:
 
 profile:
 	$(MAKE) all CFLAGS="@PROFILE@"
+
+
+Android.mk: Makefile.am
+	androgenizer -:PROJECT libogg -:SHARED libogg \
+	 -:TAGS eng debug \
+         -:REL_TOP $(top_srcdir) -:ABS_TOP $(abs_top_srcdir) \
+	 -:SOURCES $(libogg_la_SOURCES) \
+	 -:CFLAGS $(DEFS) $(INCLUDES) $(libogg_la_CFLAGS) \
+	 -:LDFLAGS $(libogg_la_LDFLAGS) \
+	 -:HEADERS $(top_srcdir)/include/ogg/ogg.h \
+	 -:HEADER_TARGET ogg \
+	 -:PASSTHROUGH LOCAL_ARM_MODE:=arm \
+	> $@
