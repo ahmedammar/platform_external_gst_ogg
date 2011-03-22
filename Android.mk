@@ -8,8 +8,14 @@ LIBOGG_TOP := $(LOCAL_PATH)
 LIBOGG_BUILT_SOURCES := src/Android.mk
 LIBOGG_BUILT_SOURCES := $(patsubst %, $(abspath $(LIBOGG_TOP))/%, $(LIBOGG_BUILT_SOURCES))
 
+ifeq ($(NDK_BUILD),true)
+LIB := $(SYSROOT)/usr/lib
+else
+LIB := $(TARGET_OUT_SHARED_LIBRARIES)
+endif
+
 .PHONY: libogg-configure
-libogg-configure:
+libogg-configure: $(TARGET_CRTBEGIN_DYNAMIC_O) $(TARGET_CRTEND_O) $(LIB)/libc.so $(LIB)/libz.so
 	echo $(LIBOGG_BUILT_SOURCES)
 	cd $(LIBOGG_TOP) ; \
 	CC="$(CONFIGURE_CC)" \
