@@ -19,7 +19,7 @@ AM_PROG_LIBTOOL
 AM_PROG_CC_C_O
 
 dnl config.h
-AM_CONFIG_HEADER(config.h)
+dnl AM_CONFIG_HEADER(config.h)
 
 dnl Set some options based on environment
 

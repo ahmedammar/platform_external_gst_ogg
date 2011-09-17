@@ -116,12 +116,12 @@ echo "  $ACLOCAL $ACLOCAL_FLAGS"
 $ACLOCAL $ACLOCAL_FLAGS || exit 1
 echo "  $LIBTOOLIZE --automake"
 $LIBTOOLIZE --automake || exit 1
-echo "  autoheader"
-autoheader || exit 1
+#echo "  autoheader"
+#autoheader || exit 1
 echo "  $AUTOMAKE --add-missing $AUTOMAKE_FLAGS"
 $AUTOMAKE --add-missing $AUTOMAKE_FLAGS || exit 1
 echo "  autoconf"
-autoconf || exit 1
+autoreconf || exit 1
 
 cd $olddir
 $srcdir/configure --enable-maintainer-mode "$@" && echo
