@@ -24,7 +24,7 @@ libogg-configure: $(TARGET_CRTBEGIN_DYNAMIC_O) $(TARGET_CRTEND_O) $(LIB)/libc.so
 	LDFLAGS="$(CONFIGURE_LDFLAGS)" \
 	CPP=$(CONFIGURE_CPP) \
 	CPPFLAGS="$(CONFIGURE_CPPFLAGS)" \
-	PKG_CONFIG_PATH=$(CONFIGURE_PKG_CONFIG_PATH) \
+	PKG_CONFIG_LIBDIR=$(CONFIGURE_PKG_CONFIG_PATH) \
 	PKG_CONFIG_TOP_BUILD_DIR=/ \
 	$(abspath $(LIBOGG_TOP))/$(CONFIGURE) --host=arm-linux-androideabi \
 	--prefix=/system --disable-nls --disable-loadsave \
