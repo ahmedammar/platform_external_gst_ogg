@@ -30,7 +30,7 @@ profile:
 
 Android.mk: Makefile.am
 	androgenizer -:PROJECT libogg -:SHARED libogg \
-	 -:TAGS user eng debug \
+	 -:TAGS optional eng debug \
          -:REL_TOP $(top_srcdir) -:ABS_TOP $(abs_top_srcdir) \
 	 -:SOURCES $(libogg_la_SOURCES) \
 	 -:CFLAGS $(DEFS) $(INCLUDES) $(libogg_la_CFLAGS) \
